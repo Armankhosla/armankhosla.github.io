@@ -12,69 +12,62 @@
   /* --- Header/Profile --- */
   header {
     text-align: center;
-    padding: 40px 20px 20px 20px;
-    background-color: #f8f8f8;
+    padding: 50px 20px 30px 20px;
+    background: linear-gradient(135deg, #8B0000, #2c3e50); /* wine to blue gradient */
+    color: #fff;
   }
   header img {
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   }
   header h1 {
-    font-size: 2em;
-    color: #2c3e50; /* dark blue accent */
+    font-size: 2.2em;
+    margin-bottom: 10px;
   }
   header p {
     font-size: 1.1em;
+  }
+
+  /* --- Section Common --- */
+  section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 20px;
+  }
+  section h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  section p {
+    font-size: 1.1em;
+    text-align: center;
     color: #555;
   }
 
   /* --- Leadership Section --- */
-  .leadership {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
-  }
-  .leadership h2 {
-    font-size: 1.8em;
-    color: #8B0000; /* wine accent */
-    margin-bottom: 15px;
-    text-align: center;
-  }
-  .leadership p {
-    font-size: 1.1em;
-    text-align: center;
-    color: #444;
-  }
+  .leadership h2 { color: #8B0000; } /* wine color */
 
   /* --- Trust Section --- */
-  .trust {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
-  }
-  .trust h2 {
-    font-size: 1.8em;
-    color: #2c3e50; /* dark blue accent */
-    margin-bottom: 15px;
-    text-align: center;
-  }
-  .trust p {
-    font-size: 1.1em;
-    text-align: center;
-    color: #444;
-  }
+  .trust h2 { color: #2c3e50; } /* dark blue */
+
+  /* --- Initiatives Section --- */
+  .initiatives p { font-style: italic; color: #777; margin-bottom: 25px; }
 
   /* --- Photo Slider --- */
   .slider {
     max-width: 800px;
-    margin: 40px auto;
+    margin: 0 auto;
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+    transition: all 0.3s ease-in-out;
   }
   .slides {
     display: flex;
@@ -83,25 +76,32 @@
   }
   .slides img {
     width: 100%;
+    aspect-ratio:16/9;
     object-fit: cover;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .slides img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
   }
 
   /* --- Footer --- */
   footer {
-    position: fixed;
-    bottom: 10px;
-    right: 20px;
-    font-size: 0.9em;
-    color: #555;
     text-align: right;
+    padding: 15px 20px;
+    font-size: 0.95em;
+    color: #333;
+    border-top: 2px solid #8B0000;
+    background-color: #f9f9f9;
   }
   footer a {
-    color: #2c3e50;
     text-decoration: none;
+    color: #2c3e50;
+    font-weight: bold;
   }
-  footer a:hover {
-    text-decoration: underline;
-  }
+  footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -132,23 +132,20 @@
 <!-- Initiatives Section -->
 <section class="initiatives">
   <h2>Mr. Raj Arman Khosla's Initiatives</h2>
-  <p style="text-align:center; font-style:italic; color:#555; margin-bottom:20px;">
-    Initiatives at other schools and volunteering activities
-  </p>
+  <p>Initiatives at other schools and volunteering activities</p>
 
-  <!-- Image Slider (YouTube-style 16:9 aspect ratio) -->
-  <div class="slider" style="max-width:800px; margin:0 auto;">
-    <div class="slides" style="display:flex; width:200%; transition: transform 0.8s ease-in-out;">
-      <img src="IMG_20251114_231708.jpg" alt="Education Initiative" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:10px;">
-      <img src="IMG_20251114_231708.jpg" alt="Charitable Initiative" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:10px;">
+  <div class="slider">
+    <div class="slides">
+      <img src="IMG_20251114_231708.jpg" alt="Education Initiative">
+      <img src="IMG_20251114_231729.jpg" alt="Charitable Initiative">
     </div>
   </div>
 </section>
 
 <!-- Footer -->
-<footer style="text-align:right; padding:0; font-size:0.95em; color:#333; border-top:1px solid #ccc; background-color:#f8f8f8;">
+<footer>
   ©2025 Mr. Raj Arman Khosla | Founder and Educator<br>
-  Email: <a href="mailto:armankhosla73@gmail.com" style="text-decoration:none; color:#2c3e50;">armankhosla73@gmail.com</a>
+  Email: <a href="mailto:armankhosla73@gmail.com">armankhosla73@gmail.com</a>
 </footer>
 
 <!-- Slider Script -->
@@ -162,3 +159,6 @@
     slides.style.transform = `translateX(-${currentIndex * 100}%)`;
   }, 3000);
 </script>
+
+</body>
+    </html>
