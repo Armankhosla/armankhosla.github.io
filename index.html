@@ -1,377 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Raj Arman Khosla | Founder & Educator</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mr. Raj Arman Khosla</title>
+<style>
+  /* --- General Reset & Body --- */
+  * {margin:0; padding:0; box-sizing:border-box; font-family: 'Arial', sans-serif;}
+  body {background-color: #ffffff; color: #333; line-height: 1.6;}
 
-  <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background-color: #ffffff;
-      color: #1a1a1a;
-    }
+  /* --- Header/Profile --- */
+  header {
+    text-align: center;
+    padding: 40px 20px 20px 20px;
+    background-color: #f8f8f8;
+  }
+  header img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  header h1 {
+    font-size: 2em;
+    color: #2c3e50; /* dark blue accent */
+  }
+  header p {
+    font-size: 1.1em;
+    color: #555;
+  }
 
-    /* HEADER */
-    header {
-      background-color: #4a0022;
-      padding: 22px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      color: white;
-    }
+  /* --- Leadership Section --- */
+  .leadership {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  .leadership h2 {
+    font-size: 1.8em;
+    color: #8B0000; /* wine accent */
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .leadership p {
+    font-size: 1.1em;
+    text-align: center;
+    color: #444;
+  }
 
-    .address {
-      font-size: 15px;
-      opacity: 0.95;
-      font-weight: 500;
-    }
+  /* --- Trust Section --- */
+  .trust {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  .trust h2 {
+    font-size: 1.8em;
+    color: #2c3e50; /* dark blue accent */
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .trust p {
+    font-size: 1.1em;
+    text-align: center;
+    color: #444;
+  }
 
-    nav a {
-      margin-left: 24px;
-      text-decoration: none;
-      color: #87c5ff;
-      font-weight: bold;
-      font-size: 15px;
-    }
+  /* --- Photo Slider --- */
+  .slider {
+    max-width: 800px;
+    margin: 40px auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  }
+  .slides {
+    display: flex;
+    width: 200%;
+    transition: transform 0.8s ease-in-out;
+  }
+  .slides img {
+    width: 100%;
+    object-fit: cover;
+  }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    /* HERO */
-    .hero {
-      width: 100%;
-      height: 78vh;
-      background: linear-gradient(rgba(74,0,34,0.6), rgba(0,65,130,0.6)), url('https://source.unsplash.com/1600x900/?india,landscape') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      color: white;
-      padding: 20px;
-    }
-
-    .hero h1 {
-      font-size: 64px;
-      letter-spacing: 1px;
-      margin: 0;
-    }
-
-    .hero h3 {
-      margin-top: 14px;
-      font-size: 24px;
-      opacity: 0.95;
-    }
-
-    /* SECTION */
-    .section {
-      padding: 70px 40px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .section h2 {
-      font-size: 36px;
-      color: #4a0022;
-      margin-bottom: 25px;
-      border-left: 6px solid #7bb7ff;
-      padding-left: 14px;
-    }
-
-    .section p {
-      font-size: 18px;
-      line-height: 1.7;
-    }
-
-
-    /* INITIATIVES GRID */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 32px;
-      margin-top: 40px;
-    }
-
-    .card {
-      border-radius: 12px;
-      overflow: hidden;
-      background-color: #faf6f8;
-      border-top: 6px solid #4a0022;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-    }
-
-    .card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-    }
-
-    .card-text {
-      padding: 20px;
-    }
-
-    .card-text h3 {
-      color: #4a0022;
-      margin-bottom: 12px;
-      font-size: 22px;
-    }
-
-
-    /* SLIDESHOW */
-    .slideshow-container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 60px auto;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.25);
-    }
-
-    .slide-img {
-      width: 100%;
-      height: 460px;
-      object-fit: cover;
-      animation: fade 1.8s ease-in-out;
-    }
-
-    @keyframes fade {
-      from { opacity: 0.4; }
-      to { opacity: 1; }
-    }
-
-
-    /* CTA */
-    .cta {
-      background-color: #e9f2ff;
-      padding: 70px 20px;
-      text-align: center;
-      border-top: 6px solid #4a0022;
-    }
-
-    .cta h2 {
-      color: #4a0022;
-      font-size: 34px;
-      margin-bottom: 18px;
-    }
-
-    .cta p {
-      font-size: 18px;
-    }
-
-    .cta button {
-      background-color: #4a0022;
-      border: none;
-      padding: 14px 26px;
-      font-size: 18px;
-      color: white;
-      border-radius: 8px;
-      cursor: pointer;
-      margin: 10px;
-    }
-
-    .cta button:hover {
-      background-color: #7bb7ff;
-      color: #000;
-    }
-
-    footer {
-      text-align: center;
-      padding: 25px;
-      background-color: #4a0022;
-      color: white;
-    }
-  </style>
-
-  <script>
-    let slideIndex = 0;
-    function showSlides() {
-      const images = [
-        "https://source.unsplash.com/1600x900/?education,india",
-        "https://source.unsplash.com/1600x900/?charity,volunteer",
-        "https://source.unsplash.com/1600x900/?church,community",
-        "https://source.unsplash.com/1600x900/?youth,leadership"
-      ];
-
-      const img = document.getElementById("slide");
-      img.src = images[slideIndex];
-      slideIndex = (slideIndex + 1) % images.length;
-      setTimeout(showSlides, 2600);
-    }
-    window.onload = showSlides;
-  </script>
-
+  /* --- Footer --- */
+  footer {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    font-size: 0.9em;
+    color: #555;
+    text-align: right;
+  }
+  footer a {
+    color: #2c3e50;
+    text-decoration: none;
+  }
+  footer a:hover {
+    text-decoration: underline;
+  }
+</style>
 </head>
 <body>
 
+<!-- Header / Profile -->
 <header>
-  <div class="address">Bisoi Lane, Near Gayatri Temple, Nabarangpur, Odisha, 764059</div>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#initiatives">Initiatives</a>
-    <a href="#gallery">Gallery</a>
-  </nav>
+  <img src="IMG_20251114_221508.jpg" alt="Mr. Raj Arman Khosla">
+  <h1>Mr. Raj Arman Khosla</h1>
+  <p>Founder | Educator | Philanthropist<br>A young visionary committed to social welfare and education.</p>
 </header>
-<!-- PROFILE PHOTO SECTION -->
-<section class="section" id="profile-photo">
-  <h2>Profile</h2>
-  <div style="
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-  ">
-    <img 
-      src="IMG-20250909-WA0004.jpg" 
-      alt="Raj Arman Khosla"
-      style="
-        width: 260px;
-        height: 260px;
-        object-fit: cover;
-        border-radius: 14px;
-        box-shadow: 0 4px 18px rgba(0,0,0,0.25);
-        border: 5px solid #4a0022;
-      "
-    />
+
+<!-- Leadership Section -->
+<section class="leadership">
+  <h2>Leadership & Vision</h2>
+  <p>
+    Mr. Raj Arman Khosla is an emerging leader and educator with hands-on experience working with various schools to promote education and develop rural communities. He is planning to establish his own school to provide quality education, skill development, and co-curricular activities. His focus on integrity, vision, and community engagement positions him as a trusted individual for partnerships and sponsorships.
+  </p>
+</section>
+
+<!-- Trust Section -->
+<section class="trust">
+  <h2>Enlightenment Care Charitable Trust</h2>
+  <p>
+    The Enlightenment Care Charitable Trust plans to make a difference through education and other charitable works in society. With the support of sponsors and partners, these initiatives will be carefully implemented to create sustainable impact.
+  </p>
+</section>
+
+<!-- Photo Slider -->
+<div class="slider">
+  <div class="slides">
+    <img src="IMG_20250721_130520.jpg" alt="Education Initiative">
+    <img src="IMG_20250510_171915.jpg" alt="Charitable Initiative">
   </div>
-</section>
-
-<!-- HERO -->
-<div class="hero">
-  <h1>Raj Arman Khosla</h1>
-  <h3>Community & Church Leadership</h3>
-        <p>Raj contributes actively as a youth leader, focusing on teamwork, discipline and spiritual development among young members. His leadership encourages cooperation, respect and consistent participation in church activities.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://source.unsplash.com/featured/?church,leadership" />
-      <div class="card-text">
-        <h3>Church & Community Leadership</h3>
-        <p>Raj plays an active leadership role in church youth development, encouraging teamwork, personal discipline and consistent participation. His guidance helps young people develop confidence and responsibility within their community.</p>
-        <h3>Founder • Educator • Community Leader</h3>
 </div>
 
-
-<!-- ABOUT -->
-<section class="section" id="about">
-  <h2>About</h2>
-  <p>
-    Raj Arman Khosla is the Founder of Enlightenment Care Charitable Trust and an educator working to bring structure, clarity and encouragement to students from diverse backgrounds. His approach focuses on discipline, personal guidance and consistent academic mentoring.
-  </p>
-  <p>
-    Along with academic involvement, he contributes to community building and youth leadership within church and social groups. His leadership style is responsible, fair and focused on maintaining a positive environment where people can work with unity and respect.
-  </p>
-  <p>
-    Raj is committed to shaping systems that run smoothly, building stable charitable efforts and creating opportunities for young people to develop confidence and a future-ready mindset.
-  </p>
-</section>
-
-
-<!-- SLIDESHOW -->
-<div class="slideshow-container" id="gallery">
-  <img id="slide" class="slide-img" src="https://source.unsplash.com/1600x900/?india,charity" />
-</div>
-
-
-<!-- INITIATIVES -->
-<section class="section" id="initiatives">
-  <h2>Initiatives</h2>
-  <div class="grid">
-
-    <div class="card">
-      <img src="https://source.unsplash.com/featured/?education,students" />
-      <div class="card-text">
-        <h3>Community & Church Leadership</h3>
-        <p>Raj contributes actively as a youth leader, focusing on teamwork, discipline and spiritual development among young members. His leadership encourages cooperation, respect and consistent participation in church activities.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://source.unsplash.com/featured/?church,leadership" />
-      <div class="card-text">
-        <h3>Church & Community Leadership</h3>
-        <p>Raj plays an active leadership role in church youth development, encouraging teamwork, personal discipline and consistent participation. His guidance helps young people develop confidence and responsibility within their community.</p>
-        <h3>Church & Youth Leadership</h3>
-        <p>Active involvement in youth guidance, committee structuring, and community development within church environments.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- CTA -->
-<div class="cta">
-  <h2>For Collaboration or Outreach</h2>
-  <p>You can reach out for educational, youth development or charitable coordination work.</p>
-  <button>Email</button>
-  <button>Call</button>
-</div>
-
-
+<!-- Footer -->
 <footer>
-  © 2025 Raj Arman Khosla | Founder & Educator | Enlightenment Care Charitable Trust
+  Email: <a href="mailto:armankhosla73@gmail.com">armankhosla73@gmail.com</a>
 </footer>
 
-<!-- EMAIL POPUP MODAL -->
-<div id="emailModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); backdrop-filter:blur(3px); align-items:center; justify-content:center; z-index:2000;">
-  <div style="background:white; width:90%; max-width:420px; padding:30px; border-radius:14px; box-shadow:0 4px 20px rgba(0,0,0,0.3);">
-    <h3 style="margin-top:0; color:#4a0022;">Send a Message</h3>
-
-    <form action="https://formsubmit.co/armankhosla73@gmail.com" method="POST">
-      <!-- Hide Email Address from frontend -->
-      <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
-      <input type="hidden" name="_captcha" value="false">
-
-      <label>Your Email</label>
-      <input type="email" name="email" required style="width:100%; padding:10px; margin:8px 0 18px; border-radius:8px; border:1px solid #ccc;">
-
-      <label>Description</label>
-      <textarea name="message" required rows="5" style="width:100%; padding:10px; margin-top:8px; border-radius:8px; border:1px solid #ccc;"></textarea>
-
-      <button type="submit" style="margin-top:15px; width:100%; padding:12px; background:#4a0022; color:white; border:none; border-radius:8px; font-size:16px; cursor:pointer;">Send</button>
-    </form>
-
-    <button onclick="closeEmailModal()" style="margin-top:15px; width:100%; padding:10px; background:#ccc; border:none; border-radius:8px; cursor:pointer;">Close</button>
-  </div>
-</div>
-
 <script>
-function openEmailModal() {
-  document.getElementById('emailModal').style.display = 'flex';
-}
-function closeEmailModal() {
-  document.getElementById('emailModal').style.display = 'none';
-}
-</script>
+  // Simple automatic slider
+  let currentIndex = 0;
+  const slides = document.querySelector('.slides');
+  const totalSlides = slides.children.length;
 
-<!-- CALL POPUP MODAL -->
-<div id="callModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); backdrop-filter:blur(3px); align-items:center; justify-content:center; z-index:2000;">
-  <div style="background:white; width:90%; max-width:360px; padding:26px; border-radius:14px; box-shadow:0 4px 20px rgba(0,0,0,0.25); text-align:center;">
-    <h3 style="margin-top:0; color:#4a0022;">Call Raj Arman Khosla</h3>
-    <p style="font-size:16px; margin-bottom:20px;">Press the button below to start a call.</p>
-
-    <!-- Dial button (number hidden from display but used internally) -->
-    <a href="tel:+918457924552" style="display:block; background:#4a0022; color:white; padding:12px; border-radius:8px; text-decoration:none; font-size:17px;">Call Now</a>
-
-    <button onclick="closeCallModal()" style="margin-top:15px; width:100%; padding:10px; background:#ccc; border:none; border-radius:8px; cursor:pointer;">Close</button>
-  </div>
-</div>
-
-<script>
-function openCallModal() {
-  document.getElementById('callModal').style.display = 'flex';
-}
-function closeCallModal() {
-  document.getElementById('callModal').style.display = 'none';
-}
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }, 3000); // Change slide every 3 seconds
 </script>
 
 </body>
-    </html>
+  </html>
