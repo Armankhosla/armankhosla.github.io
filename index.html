@@ -70,15 +70,21 @@
   }
   .slides {
     display: flex;
-    width: 200%;
     transition: transform 0.8s ease-in-out;
   }
+  .slides > div {
+    flex: 0 0 100%;
+    position: relative;
+    padding-top: 56.25%; /* 16:9 ratio */
+  }
   .slides img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    aspect-ratio: 16/9; /* Correct 16:9 ratio */
+    height: 100%;
     object-fit: cover;
     border-radius: 15px;
-    cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   .slides img:hover {
@@ -122,7 +128,7 @@
 <section class="leadership">
   <h2>Leadership & Vision</h2>
   <p>
-    Mr. Raj Arman Khosla is an emerging leader and educator with hands-on experience working with various schools to promote education and develop rural communities. He is planning to establish his own school to provide quality education, skill development, and co-curricular activities. His focus on integrity, vision, and community engagement positions him as a trusted individual for partnerships and sponsorships.
+    Mr. Raj Arman Khosla, founder of Enlightenment Care Charitable Trust is an emerging leader and educator with hands-on experience working with various schools to promote education and develop rural communities. He is planning to establish his own school to provide quality education, skill development, and co-curricular activities. His focus on integrity, vision, and community engagement positions him as a trusted individual for partnerships and sponsorships.
   </p>
 </section>
 
@@ -141,8 +147,12 @@
 
   <div class="slider">
     <div class="slides">
-      <img src="IMG_20251114_231729.jpg" alt="Education Initiative">
-      <img src="IMG_20251114_231708.jpg" alt="Charitable Initiative">
+      <div>
+        <img src="IMG_20251114_231708.jpg" alt="Education Initiative">
+      </div>
+      <div>
+        <img src="IMG_20251114_231708.jpg" alt="Charitable Initiative">
+      </div>
     </div>
   </div>
 </section>
