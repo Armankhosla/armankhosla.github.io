@@ -61,13 +61,12 @@
 
   /* --- Photo Slider --- */
   .slider {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0 6px 25px rgba(0,0,0,0.15);
-    transition: all 0.3s ease-in-out;
   }
   .slides {
     display: flex;
@@ -76,7 +75,7 @@
   }
   .slides img {
     width: 100%;
-    aspect-ratio:16/9;
+    aspect-ratio: 16/9; /* Correct 16:9 ratio */
     object-fit: cover;
     border-radius: 15px;
     cursor: pointer;
@@ -102,6 +101,12 @@
     font-weight: bold;
   }
   footer a:hover { text-decoration: underline; }
+
+  /* --- Responsive --- */
+  @media (max-width: 600px){
+    header h1 { font-size: 1.8em; }
+    section h2 { font-size: 1.5em; }
+  }
 </style>
 </head>
 <body>
@@ -136,8 +141,8 @@
 
   <div class="slider">
     <div class="slides">
-      <img src="IMG_20251114_231708.jpg" alt="Education Initiative">
-      <img src="IMG_20251114_231729.jpg" alt="Charitable Initiative">
+      <img src="IMG_20251114_231729.jpg" alt="Education Initiative">
+      <img src="IMG_20251114_231708.jpg" alt="Charitable Initiative">
     </div>
   </div>
 </section>
@@ -161,4 +166,4 @@
 </script>
 
 </body>
-    </html>
+</html>
